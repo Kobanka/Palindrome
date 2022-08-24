@@ -1,0 +1,20 @@
+{
+  "name": "aniss-palindrome",
+  "version": "1.0.0",
+  "description": "Palindrome detector",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kobanka/Palindrome.git"
+  },
+  "keywords": [],
+  "author": "an-is-19",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kobanka/Palindrome/issues"
+  },
+  "homepage": "https://github.com/Kobanka/Palindrome#readme"
+}

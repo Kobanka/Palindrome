@@ -1,3 +1,4 @@
+module.exports = Phrase;
 // Adds `reverse` to all strings.
 String.prototype.reverse = function() {
     return Array.from(this).reverse().join("");
@@ -7,14 +8,16 @@ String.prototype.reverse = function() {
 function Phrase(content){
     this.content = content;
 
-    //Processes a string into LowerCase.
-    this.processor = function(string){
-        return string.toLowerCase();
+    // Returns the letters in the content.
+    // For example:
+    //   new Phrase("Hello, world!").letters() === "Helloworld"
+    this.letters = function letters() {
+        return (this.content.match(/[a-z]/gi) || []).join("");
     }
 
     //Return content processed by palindrome testing.
     this.processedContent = function processedContent(){
-        return this.processor(this.content);
+        return this.letters().toLowerCase();
     }
 
     // Returns true if the phrase is a palindrome, false otherwise.
@@ -22,18 +25,3 @@ function Phrase(content){
         return this.processedContent() === this.processedContent().reverse();
     }
 }
-
-// //Defines a TranslatedPhrase object.
-// function TranslatedPhrase(content,translation){
-//     this.content = content;
-
-//     this.translation = translation;
-
-//     // Returns translation processed for palindrome testing.
-//     this.processedContent = function processedContent() {
-//         return this.processor(this.translation); 
-//     }
-
-// }
-
-// TranslatedPhrase.prototype = new Phrase();
